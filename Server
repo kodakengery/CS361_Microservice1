@@ -42,7 +42,7 @@ while True:
 
         # Error handling
         except ValueError:
-            reply = 'Error: Requests for quote must be a valid integer'
+            reply = 'Error: Requests for quote must be a valid string'
 
     socket.send_string(reply +"\n "+text + " Completed!")
 
