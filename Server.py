@@ -34,16 +34,15 @@ while True:
         socket.send_string(reply)
         break
 
-    # Send back a quote if number is valid
+    # Send back a quote if value is valid
     else:
         try:
-            reply= random.choice(QUOTES)
-         
+            reply = random.choice(QUOTES)
 
         # Error handling
         except ValueError:
             reply = 'Error: Requests for quote must be a valid string'
 
-    socket.send_string(reply +"\n "+text + " Completed!")
+    socket.send_string(reply + "\n "+ text + " Completed!")
 
 context.destroy()
