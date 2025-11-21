@@ -10,7 +10,6 @@ QUOTES = [
     'Each step brings you closer to your goal',
     'Your potential is limitless',
     'Stay positive, work hard, make it happen',
-    'Each step brings you closer to your goal',
     'Small victories lead to big achievements'
 ]
 
@@ -29,7 +28,7 @@ while True:
         reply = 'Error: Requests for quote must have content'
 
     # Shut down the server
-    elif message.decode() == 'Q':
+    elif text == 'Q':
         reply = 'Quitting server'
         socket.send_string(reply)
         break
@@ -43,6 +42,6 @@ while True:
         except ValueError:
             reply = 'Error: Requests for quote must be a valid string'
 
-    socket.send_string(reply + "\n "+ text + " Completed!")
+    socket.send_string(reply + "\n " + text + " Completed!")
 
 context.destroy()
